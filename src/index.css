@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@import "@fontsource/big-shoulders-display/700";
+@import "@fontsource/big-shoulders-display/800";
+@import "@fontsource/big-shoulders-display/900";
+@import "@fontsource/work-sans/400";
+@import "@fontsource/work-sans/500";
+@import "@fontsource/work-sans/600";
+@import "@fontsource/work-sans/700";
+@import "@fontsource/ibm-plex-mono/500";
+@import "@fontsource/ibm-plex-mono/600";
+
+@theme {
+  --color-asphalt: #14171a;
+  --color-asphalt-2: #1d2126;
+  --color-asphalt-3: #262b31;
+  --color-paper: #efe8d8;
+  --color-paper-2: #e4dcc8;
+  --color-ink: #14171a;
+  --color-cream: #edeae2;
+  --color-muted: #9aa0a8;
+  --color-accent: #ff6b1a;
+  --color-accent-dark: #d9560f;
+  --color-caution: #ffc53d;
+  --color-whatsapp: #25d366;
+
+  --font-display: "Big Shoulders Display", sans-serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-asphalt);
+  color: var(--color-cream);
+}
+
+/* Perforación estilo ticket/orden de trabajo */
+.perforated-top {
+  position: relative;
+}
+.perforated-top::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background-image: radial-gradient(
+    circle at 12px 0,
+    transparent 8px,
+    var(--tw-perf-bg, var(--color-asphalt)) 8.5px
+  );
+  background-size: 24px 16px;
+  background-repeat: repeat-x;
+  transform: translateY(-50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
