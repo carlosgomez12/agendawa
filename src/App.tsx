@@ -13,6 +13,7 @@ import { Pipeline } from './pages/dashboard/Pipeline'
 import { Contactos } from './pages/dashboard/Contactos'
 import { Recordatorios } from './pages/dashboard/Recordatorios'
 import { Historial } from './pages/dashboard/Historial'
+import { Asistente } from './pages/dashboard/Asistente'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="contactos" element={<Contactos />} />
             <Route path="recordatorios" element={<Recordatorios />} />
             <Route path="historial" element={<Historial />} />
+            <Route path="asistente" element={<Asistente />} />
           </Route>
         </Routes>
       </AuthProvider>

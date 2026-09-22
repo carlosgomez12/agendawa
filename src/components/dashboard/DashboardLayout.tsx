@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import { supabase, generarEnlaceSuscripcion, type Subscription } from '../../lib/supabase'
-import { CalendarDays, KanbanSquare, Users, BellRing, History, LogOut, Crown, CalendarSync } from 'lucide-react'
+import { CalendarDays, KanbanSquare, Users, BellRing, History, LogOut, Crown, CalendarSync, Sparkles } from 'lucide-react'
 import { CalendarSyncModal } from './CalendarSyncModal'
 
 const TABS = [
@@ -11,6 +11,7 @@ const TABS = [
   { to: '/dashboard/contactos', label: 'Contactos', icon: Users },
   { to: '/dashboard/recordatorios', label: 'Recordatorios', icon: BellRing },
   { to: '/dashboard/historial', label: 'Historial', icon: History },
+  { to: '/dashboard/asistente', label: 'Asistente', icon: Sparkles },
 ]
 
 function diasRestantes(fechaIso: string) {
