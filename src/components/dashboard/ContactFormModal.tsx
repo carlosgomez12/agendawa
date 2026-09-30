@@ -51,7 +51,9 @@ export function ContactFormModal({ contact, onClose, onSaved }: Props) {
 
     setGuardando(false)
     if (error) {
-      setError('No se pudo guardar. Intenta de nuevo.')
+      // Si el candado de la base de datos bloqueó la inserción, su mensaje
+      // ya es claro para el usuario (límite de contactos o prueba vencida).
+      setError(error.message || 'No se pudo guardar. Intenta de nuevo.')
       return
     }
     onSaved()
