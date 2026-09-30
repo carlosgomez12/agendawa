@@ -4,7 +4,7 @@ import { Plus } from 'lucide-react'
 const preguntas = [
   {
     q: '¿Necesito instalar algo en mi WhatsApp?',
-    a: 'No. Conectas tu número una sola vez desde el panel y listo — sin apps raras ni sesiones que se caen a mitad del día.',
+    a: 'No. AgendaWA no se conecta a tu cuenta de WhatsApp ni pide permisos sobre ella — te arma el mensaje ya redactado y lo abre directo en tu WhatsApp de siempre, tú solo le das enviar.',
   },
   {
     q: '¿Mis datos y los de mis clientes están seguros?',
@@ -12,7 +12,11 @@ const preguntas = [
   },
   {
     q: '¿Cuánto cuesta?',
-    a: 'Empiezas gratis 7 días con hasta 10 contactos y automatizaciones manuales. Después, el plan Pro cuesta $29/mes con contactos ilimitados, calendario y recordatorios automáticos.',
+    a: 'Empiezas gratis 7 días con hasta 10 contactos y automatizaciones manuales. Después, el plan Pro cuesta cerca de $95.000 COP/mes (equivalente a USD 29) con contactos ilimitados, calendario y recordatorios listos para enviar con un toque.',
+  },
+  {
+    q: '¿Los recordatorios se envían solos?',
+    a: 'Te avisamos cuándo toca mandar cada recordatorio, con el mensaje ya armado — tú das el toque final para enviarlo por WhatsApp. No es un envío automático sin tu intervención.',
   },
   {
     q: '¿Funciona en cualquier celular?',

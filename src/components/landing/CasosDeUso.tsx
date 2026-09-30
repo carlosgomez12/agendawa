@@ -9,7 +9,7 @@ const nichos = [
     id: '014',
     oficio: 'Mecánico a domicilio',
     texto:
-      'Ordena tu día por zona y servicio, y avisa solo cuando el carro esté listo para recoger.',
+      'Ordena tu día por zona y servicio, y avisa con un toque cuando el carro esté listo para recoger.',
   },
   {
     id: '027',
@@ -21,7 +21,7 @@ const nichos = [
     id: '033',
     oficio: 'Servicio de limpieza',
     texto:
-      'Programa visitas recurrentes y que cada cliente reciba su recordatorio automáticamente.',
+      'Programa visitas recurrentes y ten el recordatorio de cada cliente listo para mandar solo.',
   },
 ]
 

@@ -28,9 +28,9 @@ export function Hero() {
             trabaje <span className="text-accent">por ti.</span>
           </h1>
           <p className="mt-6 max-w-md text-lg text-cream/70">
-            Agenda de citas, cobros y recordatorios automáticos para
-            mecánicos, fontaneros, entrenadores y servicios de limpieza —
-            sin salir del chat que tus clientes ya usan.
+            Agenda de citas, cobros y recordatorios listos para enviar por
+            WhatsApp con un toque — para mecánicos, fontaneros, entrenadores
+            y servicios de limpieza.
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">

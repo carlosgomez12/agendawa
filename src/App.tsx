@@ -6,6 +6,8 @@ import { Register } from './pages/Register'
 import { ForgotPassword } from './pages/ForgotPassword'
 import { ResetPassword } from './pages/ResetPassword'
 import { PublicAppointment } from './pages/PublicAppointment'
+import { Privacidad } from './pages/Privacidad'
+import { Terminos } from './pages/Terminos'
 import { ProtectedRoute } from './pages/ProtectedRoute'
 import { DashboardLayout } from './components/dashboard/DashboardLayout'
 import { Hoy } from './pages/dashboard/Hoy'
@@ -26,6 +28,8 @@ function App() {
           <Route path="/olvide-contrasena" element={<ForgotPassword />} />
           <Route path="/nueva-contrasena" element={<ResetPassword />} />
           <Route path="/c/:token" element={<PublicAppointment />} />
+          <Route path="/privacidad" element={<Privacidad />} />
+          <Route path="/terminos" element={<Terminos />} />
           <Route
             path="/dashboard"
             element={

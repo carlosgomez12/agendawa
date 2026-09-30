@@ -22,7 +22,14 @@ export function Footer() {
 
       <div className="mx-auto mt-20 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-cream/10 pt-8 text-xs text-cream/40 sm:flex-row">
         <span>© {new Date().getFullYear()} AgendaWA. Todos los derechos reservados.</span>
-        <span className="font-mono">Hecho para técnicos que no tienen tiempo que perder.</span>
+        <div className="flex items-center gap-4">
+          <Link to="/privacidad" className="hover:text-cream/70">
+            Privacidad
+          </Link>
+          <Link to="/terminos" className="hover:text-cream/70">
+            Términos
+          </Link>
+        </div>
       </div>
     </footer>
   )

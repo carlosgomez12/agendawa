@@ -20,13 +20,13 @@ const planes = [
   },
   {
     nombre: 'Pro',
-    precio: '$29',
-    periodo: '/ mes',
+    precio: '$95.000',
+    periodo: 'COP / mes',
     detalle: 'Todo ilimitado',
     items: [
       'Contactos ilimitados',
-      'Sincronización con Google Calendar',
-      'Recordatorios automáticos (24h y 2h)',
+      'Calendario exportable a Google Calendar',
+      'Recordatorios listos para enviar (24h y 2h)',
       'Cobros y anticipos integrados',
     ],
     variant: 'stamp' as const,

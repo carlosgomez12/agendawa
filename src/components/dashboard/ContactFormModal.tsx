@@ -3,7 +3,7 @@ import { Modal } from '../ui/Modal'
 import { Input } from '../ui/Input'
 import { Select } from '../ui/Select'
 import { Button } from '../ui/Button'
-import { supabase, ETAPAS, type Contact } from '../../lib/supabase'
+import { supabase, ETAPAS, puedeCrearContacto, type Contact } from '../../lib/supabase'
 import { useAuth } from '../../contexts/AuthContext'
 
 interface Props {
@@ -26,6 +26,15 @@ export function ContactFormModal({ contact, onClose, onSaved }: Props) {
     e.preventDefault()
     if (!user) return
     setError(null)
+
+    if (!contact) {
+      const { permitido, motivo } = await puedeCrearContacto(user.id)
+      if (!permitido) {
+        setError(motivo ?? 'No puedes crear más contactos en tu plan actual.')
+        return
+      }
+    }
+
     setGuardando(true)
 
     const payload = {

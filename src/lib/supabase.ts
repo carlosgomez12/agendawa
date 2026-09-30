@@ -193,3 +193,51 @@ export async function generarEnlaceSuscripcion() {
   }
   return data.enlace_pago
 }
+
+export const LIMITE_CONTACTOS_FREE = 10
+
+/**
+ * Verifica si el usuario puede crear un contacto más, según su plan.
+ * Nota: este es un límite de producto aplicado en el cliente — no es un
+ * control de seguridad, así que no bloquea a alguien que llame la API
+ * directamente. Sirve para guiar el uso normal dentro de la app.
+ */
+export async function puedeCrearContacto(
+  userId: string
+): Promise<{ permitido: boolean; motivo?: string }> {
+  const [{ data: suscripcion }, { count }] = await Promise.all([
+    supabase
+      .from('subscriptions')
+      .select('estado, trial_ends_at')
+      .eq('user_id', userId)
+      .single(),
+    supabase
+      .from('contacts')
+      .select('id', { count: 'exact', head: true })
+      .eq('user_id', userId),
+  ])
+
+  if (suscripcion?.estado === 'activa') {
+    return { permitido: true }
+  }
+
+  const pruebaVencida = suscripcion?.trial_ends_at
+    ? new Date(suscripcion.trial_ends_at).getTime() < Date.now()
+    : false
+
+  if (pruebaVencida) {
+    return {
+      permitido: false,
+      motivo: 'Tu prueba gratis ya venció. Actualiza a Pro para seguir agregando contactos.',
+    }
+  }
+
+  if ((count ?? 0) >= LIMITE_CONTACTOS_FREE) {
+    return {
+      permitido: false,
+      motivo: `Llegaste al límite de ${LIMITE_CONTACTOS_FREE} contactos del plan gratis. Actualiza a Pro para contactos ilimitados.`,
+    }
+  }
+
+  return { permitido: true }
+}

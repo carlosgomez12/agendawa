@@ -1,12 +1,12 @@
-import { QrCode, CalendarCheck, BellRing } from 'lucide-react'
+import { UserPlus, CalendarCheck, BellRing } from 'lucide-react'
 
 const pasos = [
   {
     numero: '01',
-    icono: QrCode,
-    titulo: 'Conecta tu WhatsApp',
+    icono: UserPlus,
+    titulo: 'Crea tu cuenta',
     texto:
-      'Vincula tu número en segundos y envía tu primer mensaje de prueba antes de que se enfríe el café.',
+      'Regístrate con tu correo o con Google y entra directo a tu panel — sin instalar nada en tu WhatsApp.',
   },
   {
     numero: '02',
@@ -18,9 +18,9 @@ const pasos = [
   {
     numero: '03',
     icono: BellRing,
-    titulo: 'Cobra y automatiza',
+    titulo: 'Cobra y da seguimiento',
     texto:
-      'Envía el enlace de cobro y deja que los recordatorios de 24h y 2h antes hagan el resto por ti.',
+      'Manda el enlace de cobro y los recordatorios con un toque — el mensaje ya viene redactado, tú solo confirmas el envío.',
   },
 ]
 
